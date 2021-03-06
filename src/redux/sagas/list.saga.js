@@ -3,17 +3,14 @@ import { call, put, takeLatest } from "redux-saga/effects";
 import { fetchListApi } from "../../apis/list.api";
 import listActionTypes from "../actions";
 
-function* fetchList(action) {
+function* fetchList() {
   try {
-    const payload = action.payload;
-
-    const response = yield call(fetchListApi, { payload });
+    const response = yield call(fetchListApi);
     const result = response.data;
-    console.log("fetch List: ", result);
 
     yield put({
       type: listActionTypes.FETCH_LIST_ITEMS_SUCCEED,
-      payload,
+      payload: { result },
     });
   } catch (error) {
     yield put({
@@ -24,5 +21,5 @@ function* fetchList(action) {
 }
 
 export function* watcherFetchList() {
-  yield takeLatest(listActionTypes.FETCH_LIST_ITEMS.REQUEST, fetchList);
+  yield takeLatest(listActionTypes.FETCH_LIST_ITEMS_REQUEST, fetchList);
 }

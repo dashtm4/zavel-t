@@ -3,19 +3,26 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import { getList } from "../../selectors";
-import { fetchList } from "../../redux/actions/list.action";
+import { fetchList } from "../../redux/actions/list.actions";
 
 import "./List.scss";
 
-function List({ list }) {
-  console.log("list", list);
-
+function List({ list, fetchList }) {
   useEffect(() => {
-    console.log("invoke fetchList");
     fetchList();
   });
 
-  return <div>List</div>;
+  const handleSubmit = () => {
+    fetchList();
+  };
+  return (
+    <div className="list__wrapper">
+      <h1>LIST</h1>
+      <div>Length: {list.length}</div>
+      <div>Content: {list}</div>
+      <button onClick={handleSubmit}>submit</button>
+    </div>
+  );
 }
 
 const mapStateToProps = (state) => ({
@@ -23,10 +30,12 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  ...bindActionCreators({
-    fetchList,
-  }),
-  dispatch,
+  ...bindActionCreators(
+    {
+      fetchList,
+    },
+    dispatch
+  ),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(List);

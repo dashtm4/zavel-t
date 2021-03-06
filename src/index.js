@@ -4,9 +4,12 @@ import { Provider } from "react-redux";
 
 import App from "./App";
 import store from "./redux/store";
+import mockServer from "./services/mockServer";
 import reportWebVitals from "./reportWebVitals";
 
 import "./index.css";
+
+mockServer();
 
 ReactDOM.render(
   <React.StrictMode>

@@ -11,7 +11,6 @@ const initialState = {
 const listReducer = (state = initialState, action) => {
   switch (action.type) {
     case listActionTypes.FETCH_LIST_ITEMS_SUCCEED:
-      console.log("FETCH_LIST_ITEMS_SUCCEED");
       return {
         ...state,
         status: {
@@ -20,7 +19,6 @@ const listReducer = (state = initialState, action) => {
         },
       };
     case listActionTypes.FETCH_LIST_ITEMS_FAIL:
-      console.log("FETCH_LIST_ITEMS_FAIL");
       return {
         ...state,
         status: {

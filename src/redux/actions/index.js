@@ -1,9 +1,9 @@
-import listActionTypes from "./list.action";
+import listActionTypes from "./list.actions";
 
 const actionTypes = {
   ...listActionTypes,
 };
 
-export * from "./list.action";
+export * from "./list.actions";
 
 export default actionTypes;
