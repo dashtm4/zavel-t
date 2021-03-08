@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
-import BaseInput from "../../../components/BaseComponents/BaseInput";
+import LoginSection from "./LoginSection";
+import CodeVerificationSection from "./CodeVerificationSection";
 import BaseTypography from "../../../components/BaseComponents/BaseTypography";
-import BaseButton from "../../../components/BaseComponents/BaseButton";
 
 import LogoImage from "../../../assets/images/logo.png";
-import InputIcon from "../../../assets/images/input-icon.png";
 import "./LoginPage.scss";
 
 function LoginPage() {
+  const [step, setStep] = useState(0);
+
+  const handleLogin = () => {
+    setStep(1);
+  };
+
   return (
     <div className="login__wrapper">
       <div className="login__container">
@@ -22,13 +27,11 @@ function LoginPage() {
           >
             Password-less login
           </BaseTypography>
-          <BaseInput
-            className="login__content-password--input"
-            type="text"
-            placeholder="Username"
-            preIconSrc={InputIcon}
-          />
-          <BaseButton>Login</BaseButton>
+          {step === 0 ? (
+            <LoginSection onLogin={handleLogin} />
+          ) : (
+            <CodeVerificationSection />
+          )}
         </div>
         <div className="login__footer">
           <img src={LogoImage} alt="logo" width="114px" />

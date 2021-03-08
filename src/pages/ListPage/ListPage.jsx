@@ -17,10 +17,10 @@ function List({ list, fetchList }) {
   };
   return (
     <div className="list__wrapper">
-      <h1>LIST</h1>
+      <h1>DASHBOARD</h1>
       <div>Length: {list.length}</div>
       <div>Content: {list}</div>
-      <button onClick={handleSubmit}>submit</button>
+      <button onClick={handleSubmit}>Fetch</button>
     </div>
   );
 }

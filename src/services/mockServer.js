@@ -5,7 +5,7 @@ export default function mockServer() {
     routes() {
       this.namespace = "api";
 
-      this.get("/list", () => []);
+      this.get("/list", () => [1, 2, 3]);
     },
   });
 }
