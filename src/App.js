@@ -1,12 +1,11 @@
-import List from "./pages/List/List";
-import "./App.css";
+import LoginPage from "./pages/auth/LoginPage";
+
+import "./styles/index.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <List />
-      </header>
+    <div className="app">
+      <LoginPage />
     </div>
   );
 }

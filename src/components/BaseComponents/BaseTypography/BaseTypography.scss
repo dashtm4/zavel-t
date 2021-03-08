@@ -1,0 +1,31 @@
+@import "../../../styles";
+
+.base-typography {
+  color: $color-primary;
+
+  &.heading1 {
+    font-size: 43px;
+    font-weight: 500;
+  }
+
+  &.heading2 {
+    font-size: 38px;
+    font-weight: 400;
+  }
+
+  &.body1 {
+    font-size: 21px;
+  }
+
+  &.body2 {
+    font-size: 18px;
+  }
+
+  &.body3 {
+    font-size: 16px;
+  }
+
+  &.body4 {
+    font-size: 14px;
+  }
+}

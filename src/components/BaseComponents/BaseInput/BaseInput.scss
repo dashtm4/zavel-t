@@ -1,0 +1,27 @@
+@import "../../../styles";
+
+.base-input {
+  &__wrapper {
+    position: relative;
+
+    input {
+      box-sizing: border-box;
+      border: 1px solid $color-border;
+      border-radius: 3px;
+      padding: 3px 48px 3px 15px;
+      width: 100%;
+      height: 40px;
+
+      &::placeholder {
+        font-style: italic;
+        color: $color-border;
+      }
+    }
+  }
+
+  &__pre-icon {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+  }
+}

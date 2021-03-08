@@ -5,7 +5,7 @@ import { bindActionCreators } from "redux";
 import { getList } from "../../selectors";
 import { fetchList } from "../../redux/actions/list.actions";
 
-import "./List.scss";
+import "./ListPage.scss";
 
 function List({ list, fetchList }) {
   useEffect(() => {
